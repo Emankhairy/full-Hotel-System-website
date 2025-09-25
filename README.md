@@ -1,18 +1,18 @@
-- Hotel System Website
+## Hotel System Website
 
 A complete Hotel Reservation System with Client and Admin parts.
 
-Frontend: HTML, CSS, JavaScript
+- **Frontend:** HTML, CSS, JavaScript
 
-Backend: ASP.NET Core (C#)
+- **Backend:** ASP.NET Core (C#)
 
-Database: Microsoft SQL Server
+- **Database:** Microsoft SQL Server
 
 This project allows guests to browse rooms, make reservations, and manage their bookings. Administrators can manage rooms, reservations, and users.
 
-- Features :-
+## **Features :-**
   
-* Client
+* **Client**
 
 Browse available rooms with images and details
 
@@ -22,7 +22,7 @@ Reserve rooms (date-based availability check)
 
 View and manage reservations
 
-* Admin
+* **Admin**
 
 Manage rooms (add, update, delete)
 
