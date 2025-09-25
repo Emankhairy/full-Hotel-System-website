@@ -1,0 +1,36 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
+
+
+public partial class signup_master : System.Web.UI.Page
+{
+    SqlConnection cz;
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        cz = new SqlConnection("Data Source=WDS;Initial Catalog=hotel;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+    }
+
+    protected void but_sign_Click(object sender, EventArgs e)
+    {
+        cz.Open();
+        SqlCommand cl = new SqlCommand("insert into singup(full_name , email , password , birthday) values('" + Txt_name.Text + "', '" + Txt_email.Text + "', '" + Txt_password.Text + "',  '" + Txt_date.Text + "')", cz);
+        SqlDataReader sdr = cl.ExecuteReader();
+        sdr.Read(); // قراءه البيانات الموجوده في الداتابيز
+       
+        Session["username"] =  Txt_name.Text  ; //booking لصفحه ال sign up تروح من علي صفحه ال 
+        Response.Redirect("booking master1.aspx");
+        Txt_name.Text = null;
+        Txt_email.Text = null;
+        Txt_password.Text = null;
+        Txt_date.Text = null;
+
+
+        cz.Close();
+    }
+}
